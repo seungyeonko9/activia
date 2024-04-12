@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* 기본 스타일 3가지(폰트, 색상, 링크) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+:root{
+    --main_color1: #009C39;
+    --main_color2: #fcfcf4;
+
+    --sub_color1: #F4C717;
+    --sub_color2: #00B9F1;
+    --sub_color3: #FF6A6E;
+    --sub_color4: #000;
+
+    --font_size18: 18px;
+    --font_size16: 16px;
+    --font_size12: 12px;
+}
+*{margin: 0; padding: 0;}
+
+body{
+    font-family: "Noto Sans KR", sans-serif, arial;
+    font-size: var(--font_size18);
+    color: #000;
+    font-weight: bold;
+}
+
+a{text-decoration: none; color: #000;}
+
+ul,li{list-style: none;}
+
+header,footer{width: 100%;}
+
+/* 헤더 */
+header{
+    height: 70px;
+    background: var(--main_color1);
+}
+
+header > .top_all{
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+/* 메인 로고 */
+header > .top_all h1{
+    width:100px;
+    position: absolute;
+    top: 5px; left: 100px;
+  }
+.top_all > h1 img{
+    width: 100%;
+}
+
+/* 판매샵 이미지 */
+.top_right{
+    width: 50px;
+    position: absolute;
+    top: 25px; left: 0;
+}
+.top_right img{
+    width: 100%;
+}
+
+/* 토글버튼서식 */
+.total_btn{
+    position:absolute;
+    right: 0;
+    top: 20px;
+}
+.fa-bars{font-size:30px; color: #fff;}
+#toggle{display:none;}
+
+/* gnb 메뉴 전체 서식 */
+.gnb{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    position:fixed;
+    top:0px;
+    left:100%;
+    padding-left: 30%;
+    z-index:1000;
+    transition:0.5s;
+}
+/* 토글버튼 클릭시 gnb의 위치가 left:0으로 위치가 이동 */
+#toggle:checked + header .gnb{
+    left: 0%;
+}
+
+/* nav 메뉴부분 */
+.nav_wrap{
+  width: 70%;
+  height: 100%;
+  background: var(--main_color1);
+  overflow-y: scroll;
+}
+.nav_wrap input[type=checkbox]{display: none;}
+
+.nav_wrap > h2{
+  text-align: left;
+  padding: 50px 0 50px 20px;
+  color: var(--main_color2);
+}
+
+.nav_wrap label{
+  display: block;
+}
+
+.nav_wrap li{
+  margin: 0 20px;
+  border-bottom: 1px solid var(--main_color2);
+  font-size: var(--font_size16);
+  color: var(--main_color2);
+  font-weight: normal;
+  line-height: 50px;
+  height: 50px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* nav 아래버튼 */
+.nav_wrap .fa-angle-down{
+  float: right;
+  margin-right: 15px;
+  color: var(--sub_color1);
+}
+.nav_wrap i{line-height: 50px;}
+
+/* 메뉴 누르면 펴지기 */
+#nav_product:checked ~ ul > li:first-child{height: 202px;}
+#nav_science:checked ~ ul > li:nth-child(2){height: 151px;}
+#nav_health:checked ~ ul > li:nth-child(3){height: 202px;}
+#nav_contact:checked ~ ul > li:last-child{height: 151px;}
+
+.nav_wrap li li > a{color: var(--main_color2); font-family: "Nanum Gothic", sans-serif, arial;}
+  
+/* 닫기버튼 */
+.gnb>.fa-times{
+    font-size: 30px;
+    color: var(--main_color2);
+    position:absolute;
+    left: 15%;
+    top: 3%;
+    transition: 0.5s;
+}
+
+/* 푸터 */
+footer{
+    background: rgba(204, 204, 204, 0.5);
+    font-family: "Nanum Gothic", sans-serif, arial;
+    font-weight: normal;
+    font-size: var(--font_size12);
+}
+
+footer > .footer_all{
+    width: 80%;
+    margin: 0 10%;
+    padding: 20px 0 20px;
+}
+
+address > p{
+    font-style: normal;
+    line-height: 20px;
+}
+
+.footer_bottom{text-align: center;}
+.footer_nav > ul > li{display: inline-block; margin: 20px 0;}
+.footer_nav > ul > li:first-child{padding-right: 20px; border-right: 1px solid var(--sub_color4);}
+.footer_nav > ul > li:last-child{padding-left: 20px;}
+.footer_nav > ul > li:hover{text-decoration: underline;}

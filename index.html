@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>액티비아</title>
+    <!-- 파비콘이미지 넣기 -->
+    <link rel="shortcut icon" type="images/x-icon" href="./images/favicon.ico">
+    <!-- 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 초기화 -->
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    <!-- 공통서식 -->
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <!-- 메인서식 -->
+    <link href="./css/main.css" rel="stylesheet" type="text/css">
+    <!-- 슬라이드 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html, body{
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        /* 콘트롤 버튼 서식 편집하기 */
+        .swiper-pagination > span{
+          background:#F4C717 !important;
+          width:60px;
+          border-radius:0px;
+        }
+        .swiper-button-next, .swiper-button-prev{
+          color: #F4C717;
+          padding:8px 4px;
+        }
+      </style>
+      <!-- 사용자가 현재 페이지에 접속을 하면 접속한 디바이스기기를 체크하여 모바일, 태블릿일경우 모바일 페이지로 이동 -->
+  <script>
+    //사용자가 접속한 디바이스 기기 체크하기
+    let mobile_keys=new Array('iPhone','iPad','Android','BlackBerry','Windows Phone','Windows CE','LG','MOT','SAMSUNG','SonyEricsson','Nokia');
+
+    //만약에 웹페이지 주소뒤에 move_pc_screen 값이 없다면
+    if(document.URL.match('move_pc_screen')) mobile_keys=null;
+
+    //위 배열값 개수만큼 반복하여 검사를 하고 모바일 사용자이면 아래 내용을 실행
+    for(i in mobile_keys){
+      //URL파라미터에 'move_pc_screen'가 포함되어 있지 않을때 아래 내용 적용
+      if(navigator.userAgent.match(mobile_keys[i]) !=null){
+        location.href='http://seungyeon.dothome.co.kr/ksy/m/index.html'; //모바일로 연결하라
+        break; //더이상 실행안함.
+      }
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <div class="top_all">
+            <!-- 상단좌측 메인 로고 -->
+            <h1 id="a">
+                <a href="index.html" title="메인페이지로 바로가기">
+                    <img src="./images/logo.png" alt="상단로고">
+                </a>
+            </h1>
+            <!-- 상단우측 판매샵 이미지 -->
+            <div class="top_right">
+                <a href="#" title="풀무원샵 페이지로 바로가기">
+                    <img src="./images/shop.png" alt="풀무원샵">
+                </a>
+            </div>
+        </div>
+        <!-- 상단중앙 네비게이션  -->
+        <div class="bottom">
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#" title="액티비아 제품">액티비아 제품</a>
+                        <ul class="sub">
+                            <li><a href="#" title="건강한">건강한</a></li>
+                            <li><a href="#" title="특별한">특별한</a></li>
+                            <li><a href="#" title="달달한">달달한</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" title="액티비아의 과학">액티비아의 과학</a>
+                        <ul class="sub">
+                            <li><a href="#" title="전문성">전문성</a></li>
+                            <li><a href="#" title="연구">연구</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" title="액티비아와 건강">액티비아와 건강</a>
+                        <ul class="sub">
+                            <li><a href="#" title="라이프">라이프</a></li>
+                            <li><a href="#" title="웰빙">웰빙</a></li>
+                            <li><a href="#" title="레시피">레시피</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" title="액티비아 경영">액티비아 경영</a>
+                        
+                    <li><a href="#" title="고객센터">고객센터</a>
+                        <ul class="sub">
+                            <li><a href="#" title="고객상담">고객상담</a></li>
+                            <li><a href="#" title="자주하는 질문">자주하는 질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- 메인 슬라이드 -->
+        <article class="slide">
+            <h2 style="display:none;">슬라이드</h2>
+            <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" title="슬라이드1">
+                    <img src="./images/main01.jpg" alt="슬라이드1">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" title="슬라이드2">
+                    <img src="./images/main02.jpg" alt="슬라이드2">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" title="슬라이드3">
+                    <img src="./images/main03.jpg" alt="슬라이드3">
+                    </a>
+                </div>
+            </div>
+            <!-- 좌, 우버튼 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- 페이지번호 -->
+            <div class="swiper-pagination"></div>
+            </div>
+        </article>
+
+        <!-- 1번째 컨텐츠 -->
+        <section id="product">
+            <div class="taste">
+                <h2>액티비아의 맛</h2>
+                <ul>
+                    <li><label for="tap01">&#35;건강한</label></li>
+                    <li><label for="tap02">&#35;특별한</label></li>
+                    <li><label for="tap03">&#35;달달한</label></li>
+                </ul>
+                
+                <input type="radio" id="tap01" name="a" checked>
+                <input type="radio" id="tap02" name="a">
+                <input type="radio" id="tap03" name="a">
+                
+                <div class="t_con01">
+                    <div>
+                        <img src="./images/plain.jpg" alt="플레인 맛">
+                        <p>액티비아 병 플레인</p>
+                    </div>
+                    <div>
+                        <img src="./images/aloe.jpg" alt="알로에 맛">
+                        <p>액티비아 병 알로에</p>
+                    </div>
+                    <div>
+                        <img src="./images/coconut.jpg" alt="코코넛 맛">
+                        <p>식물성 요거트 컵 코코넛</p>
+                    </div>
+                </div>
+                
+                <div class="t_con02">
+                    <div>
+                        <img src="./images/plain_up.jpg" alt="액티비아 UP 플레인">
+                        <p>액티비아 UP 플레인</p>
+                    </div>
+                    <div>
+                        <img src="./images/pre_plain.jpg" alt="프리미엄 프로바이오틱스">
+                        <p>프리미엄 프로바이오틱스</p>
+                    </div>
+                    <div>
+                        <img src="./images/pre_black.jpg" alt="프리미엄 프로바이오틱스 슈퍼블랙">
+                        <p>프리미엄 프로바이오틱스 슈퍼블랙</p>
+                    </div>
+                </div>
+                
+                <div class="t_con03">
+                    <div>
+                        <img src="./images/straw.jpg" alt="액티비아 병 딸기">
+                        <p>액티비아 병 딸기</p>
+                    </div>
+                    <div>
+                        <img src="./images/oatblu.jpg" alt="식물성 요거트 컵 오트블루베리">
+                        <p>식물성 요거트 컵 오트블루베리</p>
+                    </div>
+                    <div>
+                        <img src="./images/apple.jpg" alt="액티비아 병 사과">
+                        <p>액티비아 병 사과</p>
+                    </div>
+                </div>
+
+                <a href="#none" title="제품 더 보기">More</a>
+                <a href="#none" title="풀무원샵 페이지로 바로가기">Shop</a>
+            </div>
+        </section>
+        
+        <!-- 탑버튼 -->
+        <a href="#a" title="위로 바로가기" class="top_btn">Top</a>
+
+        <!-- 2,3번째 컨텐츠 -->
+        <section id="with">
+            <h2 style="display:none;">과학과 건강</h2>
+            <img src="./images/with.png" alt="이미지">
+            <div class="science_img">
+                <img src="./images/science.jpg" alt="액티비아의 과학">
+            </div>
+            <article class="science">
+                <h2>액티비아의 과학</h2>
+                <p>장 활동을 도와주는 액티비아<br>어떻게 발견한 걸까요? 한 컵에<br>담긴 놀라운 과학을 발견해 보세요!</p>
+                <a href="#none" title="액티비아의 과학 더 보기">More</a>
+            </article>
+
+            <article class="health">
+                <h2>액티비아와 건강</h2>
+                <p>건강하고 활기찬<br>생활을 위해 다양한 팁과<br>노하우, 이야기를 만나보세요!</p>
+                <a href="#none" title="액티비아와 건강 더 보기">More</a>
+            </article>
+            <div class="health_img">
+                <img src="./images/health.jpg" alt="액티비아와 건강">
+            </div>
+        </section>
+
+        <!-- 4번째 컨텐츠 -->
+        <section id="sns">
+            <div class="cf">
+                <h2>일상 속 액티비아</h2>
+                <a href="https://www.facebook.com/activiakorea/?locale=ko_KR" title="액티비아 페이스북 페이지 바로가기" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/activia_kr.official/" title="액티비아 인스타그램 페이지 바로가기" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                <p>김연경 선수와 함께하는<br>건강하고 다양하게 맛있는 액티비아,<br>SNS에서 일상 속 즐거움을 만나보세요&#33;</p>
+                <img src="./images/popup1.jpg" alt="팝업부스오픈" id="popup1">
+                <img src="./images/animation.png" alt="이미지" class="ani">
+            </div>
+        </section>
+        <script>
+            // 변수 선언
+            const b_img = document.getElementById('popup1');
+    
+            // 사용자가 이미지에 마우스 오버시 다른 이미지로 파일이 대체
+            b_img.addEventListener('mouseover', function(){
+                this.src='./images/popup2.jpg';
+            })
+            b_img.addEventListener('mouseout', function(){
+                this.src='./images/popup3.jpg';
+            })
+        </script>
+
+        <!-- 5번째 컨텐츠 -->
+        <section id="last">
+            <h2>고객문의 및 불편사항</h2>
+                <article class="contact">
+                    <h2 style="display:none;">연락방법</h2>
+                    <div class="email">
+                        <p>이메일 상담</p>
+                        <p>액티비아에 궁금한 사항을 문의해 주세요.<br>최대한 빠른 시일내에 답변해드리겠습니다.</p>
+                        <a href="#none" title="이메일로 문의하기">문의하기</a>
+                        <img src="./images/email.png" alt="이미지">
+                    
+                    </div>
+                    <div class="call">
+                        <p>전화 상담</p>
+                        <p>080-000-0000</p>
+                        <p>월~금&#40;공휴일 제외&#41; <span>09:00 ~ 18:00</span></p>
+                        <img src="./images/call.png" alt="이미지">
+                    </div>
+                </article>
+                <article class="qna">
+                    <h2>자주하는 질문 Q&#38;A</h2>
+                    <hr>
+                    <a href="#none" title="Q&#38;A 더 보기">More</a>
+                    <div>
+                        <a href="#none" title="질문1">제품 공급&#40;납품&#41; 관련 문의 드리고  싶어요.</a>
+                        <a href="#none" title="질문2">분리배출&#40;라벨 제거&#41;방법 알려주세요.</a>
+                        <a href="#none" title="질문3">제품을 구입할 수 있는 온라인 몰이 있나요?</a>
+                        <a href="#none" title="질문4">소득공제용 현금영수증 발급이 가능한가요?</a>
+                    </div>
+                    <img src="./images/qna.jpg" alt="이미지">
+                </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_all">
+            <!-- 구분선 위 -->
+            <nav class="footer_top">
+                <ul>
+                    <li><a href="#none" title="액티비아 제품" class="f_nav_title">액티비아 제품</a>
+                        <ul class="f_sub">
+                            <li><a href="#none" title="건강한">건강한</a></li>
+                            <li><a href="#none" title="건강한">특별한</a></li>
+                            <li><a href="#none" title="건강한">달달한</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#none" title="액티비아의 과학" class="f_nav_title">액티비아의 과학</a>
+                        <ul class="f_sub">
+                            <li><a href="#none" title="전문성">전문성</a></li>
+                            <li><a href="#none" title="연구">연구</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#none" title="액티비아와 건강" class="f_nav_title">액티비아와 건강</a>
+                        <ul class="f_sub">
+                            <li><a href="#none" title="라이프">라이프</a></li>
+                            <li><a href="#none" title="웰빙">웰빙</a></li>
+                            <li><a href="#none" title="레시피">레시피</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#none" title="액티비아 경영" class="f_nav_title">액티비아 경영</a>
+                        
+                    <li><a href="#none" title="고객센터" class="f_nav_title">고객센터</a>
+                        <ul class="f_sub">
+                            <li><a href="#none" title="고객상담">고객상담</a></li>
+                            <li><a href="#none" title="자주하는 질문">자주하는 질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 주소 -->
+            <address>
+                <p class="info">서울시 00구 00로 000 000빌딩 0층&#32;&#32;&#32;&#32;&#32;&#32;&#124;&#32;&#32;&#32;&#32;&#32;&#32;회사명 : 액티비아&#32;&#32;&#32;&#32;&#32;&#32;&#124;&#32;&#32;&#32;&#32;&#32;&#32;대표전화 : 00-000-0000&#32;&#32;&#32;&#32;&#32;&#32;&#124;&#32;&#32;&#32;&#32;&#32;&#32;사업번호 : 000-00-00000&#32;&#32;&#32;&#32;&#32;&#32;&#124;&#32;&#32;&#32;&#32;&#32;&#32;담당자명 : 000&#32;&#32;&#32;&#32;&#32;&#32;&#124;&#32;&#32;&#32;&#32;&#32;&#32;이메일 : 000@gmail.com</p>
+            </address>
+
+            <hr>
+            <!-- 구분선 아래 -->
+            <div class="footer_bottom">
+                <a href="#none" title="풀무원샵 페이지로 바로가기">
+                    <img src="./images/footer.png" alt="풀무원샵">
+                </a>
+            
+                <nav class="footer_nav">
+                    <ul>
+                        <li><a href="#none" title="개인정보처리방침">개인정보처리방침</a></li>
+                        <li><a href="#none" title="Contact Us">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div>&#169;Danone Pulmuone Co.,Ltd. All rights reserved</div>
+            </div>
+        </div>
+    </footer>
+    
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+</body>
+</html>
