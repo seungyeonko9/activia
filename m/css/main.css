@@ -1,0 +1,307 @@
+@charset "utf-8";
+/* 기본 스타일 3가지(폰트, 색상, 링크) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+:root{
+    --main_color1: #009C39;
+    --main_color2: #fcfcf4;
+
+    --sub_color1: #F4C717;
+    --sub_color2: #00B9F1;
+    --sub_color3: #FF6A6E;
+    --sub_color4: #000;
+
+    --font_size20: 20px;
+    --font_size18: 18px;
+    --font_size16: 16px;
+    --font_size12: 12px;
+}
+
+#sns{background: var(--main_color2);}
+
+/* 전체 1번째 컨텐츠 */
+#product{width: 100%; height: 640px; background: var(--main_color2);}
+.taste{
+    text-align: center;
+    width: 80%;
+    margin:0px auto;
+    padding-top: 50px;
+}
+.taste > h2{
+    font-size: var(--font_size20);
+}
+.taste > ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0;
+ }
+.taste > ul > li{
+    font-size: var(--font_size16);
+}
+/* radio버튼 */
+label[for="tap01"], label[for="tap02"], label[for="tap03"]{
+    border-radius: 40px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+label[for="tap01"]{
+    color: var(--sub_color1);
+    border: 2px solid var(--sub_color1);
+}
+label[for="tap02"]{
+    color: var(--sub_color2);
+    border: 2px solid var(--sub_color2);
+}
+label[for="tap03"]{
+    color: var(--sub_color3);
+    border: 2px solid var(--sub_color3);
+}
+
+/* product 이미지 */
+.t_con01, .t_con02, .t_con03{
+    display: none;
+}
+.t_con01 img, .t_con02 img, .t_con03 img{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.t_con01 p, .t_con02 p, .t_con03 p{
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px auto;
+    color: var(--main_color2);
+    font-size: var(--font_size16);
+}
+.t_con01 p{background: var(--sub_color1);}
+.t_con02 p{background: var(--sub_color2);}
+.t_con03 p{background: var(--sub_color3);}
+
+
+#tap01:checked~.t_con01{display: block;}
+#tap02:checked~.t_con02{display: block;}
+#tap03:checked~.t_con03{display: block;}
+
+input[type="radio"]{display: none;}
+/* 더 보기 */
+.more{margin-top: 27px;}
+.more > a{
+    font-family: "Nanum Gothic", sans-serif, arial;
+    background: var(--main_color2);
+    border: 2px solid var(--main_color1);
+    color: var(--main_color1);
+    padding: 5px 10px;
+    font-size: var(--font_size16);
+    margin: 0 15px;
+    line-height: 10px;
+}
+
+/* 탑 버튼 */
+html, body{scroll-behavior:smooth;}
+.top_btn{
+    position: sticky;
+    width: 20px;
+    top: calc(100% - 10%);
+    right: calc(100% - 80%);
+    margin-left: 80%;
+    padding: 15px 15px;
+    font-size: var(--font_size16);
+    color: var(--main_color2);
+    background: var(--main_color1);
+    z-index: 50;
+}
+
+/* 2,3번째 컨텐츠 */
+#with{
+    width: 80%;
+    height: 820px;
+    margin: 0 auto;
+    position: relative;
+}
+/* 공통 */
+.science > h2, .health > h2{font-size: var(--font_size18);}
+.science > p, .health > p{
+    font-size: var(--font_size16);
+    font-weight: normal;
+    font-family: "Nanum Gothic", sans-serif, arial;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.science > a, .health > a{
+    font-family: "Nanum Gothic", sans-serif, arial;
+    background: var(--main_color2);
+    border: 2px solid var(--main_color1);
+    color: var(--main_color1);
+    padding: 5px 10px;
+}
+
+/* 과학파트 */
+.science_img{
+    width: 220px;
+    height: 124px;
+    border: 3px solid var(--main_color1);
+    box-shadow: -20px -20px 0 var(--main_color1);
+    margin-left: 20px;
+    overflow: hidden;
+}
+.science_img > img{
+    width: 100%;
+}
+.science{
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 130px;
+}
+/* 건강파트 */
+.health_img{
+    width: 220px;
+    height: 124px;
+    border: 3px solid var(--main_color1);
+    box-shadow: 20px -20px 0 var(--main_color1);
+    position: absolute;
+    right: 20px;
+    overflow: hidden;
+}
+.health_img > img{
+    width: 100%;
+}
+.health{
+    position: absolute;
+    bottom: 40px;
+}
+
+/* 4번째 컨텐츠 */
+#sns{
+    width: 100%;
+    overflow: hidden;
+}
+.cf{
+    height: 530px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding-top: 50px;
+}
+.cf > h2{
+    font-size: var(--font_size20);
+
+}
+.facebook, .instagram{
+    display: inline-block;
+    color: var(--sub_color1);
+    transform: scale(1.5);
+    margin: 20px 10px 30px;
+}
+.cf > p{
+    font-family: "Nanum Gothic", sans-serif, arial;
+    font-size: var(--font_size16);
+    line-height: 30px;
+    font-weight: normal;
+}
+/* 애니메이션 */
+.ani{
+    position: absolute;
+    animation: slide 30s linear infinite;
+    bottom: 30px;
+}
+@keyframes slide{
+    0%{left: 0;}
+    100%{left: -1866px;}
+}
+
+/* 5번째 컨텐츠 */
+#last{
+    text-align: center;
+}
+#last > h2{
+    font-size: var(--font_size20);
+    padding-top: 50px;
+}
+/* 상담 */
+.email, .call{
+    height: 210px;
+    text-align: left;
+    padding: 20px 0 0 10px;
+    border: 2px solid rgba(0,0,0,0.1);
+    position: relative;
+    width: calc(80%-10px);
+    margin: 30px 10%;
+}
+.email{margin-bottom: 20px;}
+
+.email > p + p{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: var(--font_size16);
+    font-weight: normal;
+    line-height: 30px;
+    font-family: "Nanum Gothic", sans-serif, arial;
+}
+
+.email > a{
+    color: var(--main_color2);
+    background: var(--sub_color2);
+    border-radius: 40px;
+    padding: 10px 25px;
+}
+.email > img{
+    width: 50px;
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+
+.call > p:nth-child(2){
+    font-size: var(--font_size20);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.call > p:nth-child(3){
+    font-size: var(--font_size12);
+    font-weight: normal;
+    margin-bottom: 40px;
+    font-family: "Nanum Gothic", sans-serif, arial;
+}
+.call span{color: #f00;}
+.call > a{
+    color: var(--main_color2);
+    background: var(--sub_color3);
+    border-radius: 40px;
+    padding: 10px 25px;
+}
+.call > img{
+    width: 60px;
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+/* 질문 */
+.qna{width: 80%; margin: 0 10%;}
+.qna > h2{
+    font-size: var(--font_size20);
+}
+.qna > a{
+    float: right;
+    font-size: var(--font_size16);
+    color: var(--main_color1);
+    font-family: "Nanum Gothic", sans-serif, arial;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 2px solid var(--main_color1);
+}
+.qna > div{clear: both; width: 100%; margin-bottom: 30px;}
+.qna > div > a{
+    height: 30px;
+    background: var(--main_color2);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    font-family: "Nanum Gothic", sans-serif, arial;
+    font-size: var(--font_size12);
+    font-weight: normal;
+    display: block;
+    line-height: 30px;
+    margin: 0 auto 5px;
+}
